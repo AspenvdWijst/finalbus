@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\festival;
 use Illuminate\Http\Request;
 
+
 class FestivalController extends Controller
 {
     /**
@@ -44,7 +45,8 @@ class FestivalController extends Controller
      */
     public function show(festival $festival)
     {
-        //
+        $festival->load('buses');
+        return view('festival.bus', compact('festival'));
     }
 
     /**

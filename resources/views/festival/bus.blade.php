@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Festivals') }}
+            {{ __('Buses') }}
         </h2>
     </x-slot>
 
@@ -19,13 +19,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($buses as $bus)
+                    @foreach ($festival->buses as $bus)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $bus->id }}</th>
                             <td>{{ $bus->time_leave }}</td>
                             <td>{{ $bus->time_arrive }}</td>
                             <td>${{ $bus->price }}</td>
-                            <th><a href="#">Order</a></th>
+                            <th><a href="{{ route('festival.order', ['festival' => $festival->id, 'bus' => $bus->id]) }}">Order</a></th>
                         </tr>
                     @endforeach
                     </tbody>

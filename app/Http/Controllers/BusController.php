@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\bus;
 use Illuminate\Http\Request;
+use App\Models\Festival;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -71,5 +72,10 @@ class BusController extends Controller
     public function destroy(bus $bus)
     {
         //
+    }
+
+    public function order(festival $festival, bus $bus)
+    {
+        return view('festival.order', compact('festival', 'bus'));
     }
 }
