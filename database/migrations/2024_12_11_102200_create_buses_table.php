@@ -16,8 +16,9 @@ return new class extends Migration
             $table->timestamps();
             $table->time('time_leave');
             $table->time('time_arrive');
-            $table->float('price');
+            $table->integer('price');
             $table->foreignId('festival_id')->constrained('festivals');
+            $table->foreignId('user_id')->nullable()->constrained('users');
         });
     }
 

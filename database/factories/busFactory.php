@@ -21,7 +21,7 @@ class busFactory extends Factory
         return [
             'time_leave' => fake()->time(),
             'time_arrive' => fake()->time(),
-            'price' => fake()->randomFloat(),
+            'price' => fake()->randomDigitNotZero(),
             'festival_id' => fake()->randomDigitNotZero()
         ];
     }

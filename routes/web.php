@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\FestivalController;
+use App\Http\Controllers\TicketController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/festivals/{festival}/buses', [FestivalController::class, 'show'])->name('festival.bus');
 
 Route::get('/festivals/{festival}/buses/{bus}/order', [BusController::class, 'order'])->name('festival.order');
+Route::post('/ticket', [TicketController::class, 'store'])->name('tickets.store');
 
 require __DIR__.'/auth.php';
 
