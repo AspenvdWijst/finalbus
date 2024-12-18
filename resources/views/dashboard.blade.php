@@ -10,9 +10,9 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-5">
                 @foreach($festivals as $festival)
                 <h2 class="text-4xl font-extrabold dark:text-white">{{ $festival->name }}</h2>
-                <p class="my-1 text-lg text-gray-500">{{ $festival->date }}</p>
-                <p class="mb-1 text-lg font-normal text-gray-500 dark:text-gray-400">{{ $festival->info }}</p>
-                <p class="my-1 text-lg text-gray-500">{{ $festival->genre }}</p>
+                <p class=" text-lg text-gray-500">{{ $festival->date }}</p>
+                <p class="text-lg font-normal text-gray-500 dark:text-gray-400">{{ $festival->info }}</p>
+                <p class="text-lg text-gray-500">{{ $festival->genre }}</p>
                 <a href="{{ route('festival.bus', $festival->id) }}" class="inline-flex items-center text-lg text-blue-600 dark:text-blue-500 hover:underline pb-5">
                     Buses
                     <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">

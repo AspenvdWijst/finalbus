@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('buses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->dateTime('time_leave');
-            $table->dateTime('time_arrive');
+            $table->time('time_leave');
+            $table->time('time_arrive');
             $table->float('price');
             $table->foreignId('festival_id')->constrained('festivals');
         });

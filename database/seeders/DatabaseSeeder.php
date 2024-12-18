@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             'role_id' => (2),
         ]);
         festival::factory(10)->create();
-        bus::factory(10)->create();
+        bus::factory(30)->create();
         User::factory(10)->create();
 
 

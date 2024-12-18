@@ -19,8 +19,8 @@ class busFactory extends Factory
     public function definition(): array
     {
         return [
-            'time_leave' => fake()->dateTime()->format('Y-m-d H:i:s'),
-            'time_arrive' => fake()->dateTime()->format('Y-m-d H:i:s'),
+            'time_leave' => fake()->time(),
+            'time_arrive' => fake()->time(),
             'price' => fake()->randomFloat(),
             'festival_id' => fake()->randomDigitNotZero()
         ];
