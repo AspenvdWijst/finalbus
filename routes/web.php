@@ -17,7 +17,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/festivals/{festival}/buses', [FestivalController::class, 'show'])->name('festival.bus');
 
 Route::get('/festivals/{festival}/buses/{bus}/order', [BusController::class, 'order'])->name('festival.order');
-Route::post('/ticket', [TicketController::class, 'store'])->name('tickets.store');
+Route::post('/ticket/{bus}', [TicketController::class, 'store'])->name('tickets.store');
 
 require __DIR__.'/auth.php';
 

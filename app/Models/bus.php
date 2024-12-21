@@ -18,9 +18,8 @@ class bus extends Model
         return $this->belongsTo(Festival::class);
     }
 
-    public function users(): HasMany
-    {
-        return $this->hasMany(User::class);
+    public function users(){
+        return $this->belongsToMany(User::class);
     }
 
 }

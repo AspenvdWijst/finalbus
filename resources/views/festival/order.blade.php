@@ -9,7 +9,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <form action="{{ route('tickets.store') }}" method="POST">
+                <form action="{{ route('tickets.store', ['bus' => $bus->id]) }}" method="POST">
                     @csrf
                     <h2 class="font-semibold text-lg text-gray-800 dark:text-gray-200 leading-tight p-4">Bus to {{ $festival->name }}</h2>
                     <h3 class="font-semibold text-lg text-gray-800 dark:text-gray-200 leading-tight pl-4">Bus number: {{$bus->id}}</h3>

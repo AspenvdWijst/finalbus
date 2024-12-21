@@ -7,7 +7,7 @@ use App\Models\Bus;
 use Illuminate\Support\Facades\Auth;
 class TicketController extends Controller
 {
-    public function store(Request $request)
+    public function store(Request $request, Bus $bus)
     {
         // Order creation logic here
         $user = Auth::user(); // Get the logged-in user
@@ -18,8 +18,9 @@ class TicketController extends Controller
         $user->points += $pointsEarned;
         $user->save();
 
+        $user->buses()->attach($bus->id);
+
         return redirect()->route('profile.edit');
 
     }
-
 }
