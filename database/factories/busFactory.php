@@ -19,9 +19,9 @@ class busFactory extends Factory
     public function definition(): array
     {
         return [
-            'time_leave' => fake()->time(),
-            'time_arrive' => fake()->time(),
-            'price' => fake()->randomDigitNotZero(),
+            'time_leave' => $this->faker->randomElement(['10:00:00', '10:30:00', '09:30:00']),
+            'time_arrive' => $this->faker->randomElement(['11:00:00', '11:30:00', '12:00:00']),
+            'price' => $this->faker->randomFloat(2, 3, 15),
             'festival_id' => fake()->randomDigitNotZero()
         ];
     }
