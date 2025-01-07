@@ -19,7 +19,9 @@
                     <label for="quantity" class="font-semibold text-lg text-gray-800 dark:text-gray-200 leading-tight p-4">Number of Tickets:</label>
                     <input type="number" id="quantity" name="quantity" value="1" min="1" max="10" class="h-7 w-20 m-2" required>
                     <h3 id="total-price" class="font-semibold text-lg text-gray-800 dark:text-gray-200 leading-tight pl-4 pb-4">Total: ${{$bus->price}}.00</h3>
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 mt-2"></button>
+                    <div class="flex justify-end">
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 mt-2 rounded mr-4  mb-5">Order</button>
+                    </div>
                 </form>
             </div>
         </div>
