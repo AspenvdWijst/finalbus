@@ -17,8 +17,8 @@ return new class extends Migration
             $table->time('time_leave');
             $table->time('time_arrive');
             $table->integer('price');
+            $table->string('departure');
             $table->foreignId('festival_id')->constrained('festivals');
-            $table->foreignId('user_id')->nullable()->constrained('users');
         });
     }
 

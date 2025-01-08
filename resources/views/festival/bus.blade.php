@@ -15,6 +15,7 @@
                         <th scope="col" class="px-6 py-3">Leave</th>
                         <th scope="col" class="px-6 py-3">Arrive</th>
                         <th scope="col" class="px-6 py-3">Price</th>
+                        <th scope="col" class="px-6 py-3">Place of departure</th>
                         <th scope="col" class="px-6 py-3">Order</th>
                         @if ($userPoints > 100)
                             <th scope="col" class="px-6 py-3">Free Ticket</th>
@@ -28,6 +29,7 @@
                             <td>{{ $bus->time_leave }}</td>
                             <td>{{ $bus->time_arrive }}</td>
                             <td>${{ $bus->price }}</td>
+                            <td>{{$bus->departure}}</td>
                             <th><a href="{{ route('festival.order', ['festival' => $festival->id, 'bus' => $bus->id]) }}">Order</a></th>
                             @if ($userPoints > 100) <!-- Change this to your threshold -->
                                 <td>

@@ -22,7 +22,6 @@ return new class extends Migration
             $table->timestamps();
             $table->integer('role_id');
             $table->integer('points')->nullable();
-            $table->foreignId('bus_id')->nullable()->constrained('buses')->nullable();
         });
         Schema::enableForeignKeyConstraints();
 

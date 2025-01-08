@@ -22,6 +22,7 @@ class busFactory extends Factory
             'time_leave' => $this->faker->randomElement(['10:00:00', '10:30:00', '09:30:00']),
             'time_arrive' => $this->faker->randomElement(['11:00:00', '11:30:00', '12:00:00']),
             'price' => $this->faker->randomFloat(2, 3, 15),
+            'departure' => $this->faker->randomElement(['Amsterdam', 'Utrecht', 'Rotterdam']),
             'festival_id' => fake()->randomDigitNotZero()
         ];
     }
