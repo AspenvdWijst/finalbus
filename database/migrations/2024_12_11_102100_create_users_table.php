@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->integer('role_id');
+            $table->integer('role_id')->default(1);
             $table->integer('points')->nullable();
         });
         Schema::enableForeignKeyConstraints();
