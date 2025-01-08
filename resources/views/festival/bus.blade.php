@@ -16,6 +16,9 @@
                         <th scope="col" class="px-6 py-3">Arrive</th>
                         <th scope="col" class="px-6 py-3">Price</th>
                         <th scope="col" class="px-6 py-3">Order</th>
+                        @if ($userPoints > 100)
+                            <th scope="col" class="px-6 py-3">Free Ticket</th>
+                        @endif
                     </tr>
                     </thead>
                     <tbody>
@@ -26,6 +29,17 @@
                             <td>{{ $bus->time_arrive }}</td>
                             <td>${{ $bus->price }}</td>
                             <th><a href="{{ route('festival.order', ['festival' => $festival->id, 'bus' => $bus->id]) }}">Order</a></th>
+                            @if ($userPoints > 100) <!-- Change this to your threshold -->
+                                <td>
+                                    <form action="{{ route('tickets.store', ['festival' => $festival->id, 'bus' => $bus->id]) }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="is_free_ticket" value="1">
+                                        <button type="submit" class="px-4 py-2 text-white bg-green-500 hover:bg-green-700 rounded">
+                                            Get Free Ticket
+                                        </button>
+                                    </form>
+                                </td>
+                            @endif
                         </tr>
                     @endforeach
                     </tbody>

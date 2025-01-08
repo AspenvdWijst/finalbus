@@ -46,7 +46,8 @@ class FestivalController extends Controller
     public function show(festival $festival)
     {
         $festival->load('buses');
-        return view('festival.bus', compact('festival'));
+        $userPoints = auth()->user()->points ?? 0;
+        return view('festival.bus', compact('festival', 'userPoints'));
     }
 
     /**
