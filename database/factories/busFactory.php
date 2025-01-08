@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\festival;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -23,7 +24,11 @@ class busFactory extends Factory
             'time_arrive' => $this->faker->randomElement(['11:00:00', '11:30:00', '12:00:00']),
             'price' => $this->faker->randomFloat(2, 3, 15),
             'departure' => $this->faker->randomElement(['Amsterdam', 'Utrecht', 'Rotterdam']),
-            'festival_id' => fake()->randomDigitNotZero()
+            'festival_id' => function () {
+                $min = festival::min('id');
+                $max = festival::max('id');
+                return fake()->numberBetween($min, $max);
+            }
         ];
     }
 }

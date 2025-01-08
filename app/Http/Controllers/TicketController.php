@@ -14,13 +14,13 @@ class TicketController extends Controller
 
         // Order creation logic here
         $user = Auth::user(); // Get the logged-in user
-        $ticketQuantity = $request->input('quantity'); // Number of tickets ordered
         $isfreeticket = $request->input('is_free_ticket', false);
 
 
         if ($isfreeticket) {
             $user->points -= 100;
         } else {
+            $ticketQuantity = $request->input('quantity'); // Number of tickets ordered
             $pointsEarned = $ticketQuantity * 10; // Example: 10 points per ticket
             $user->points += $pointsEarned;
         }
