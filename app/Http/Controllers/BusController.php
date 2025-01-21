@@ -22,9 +22,17 @@ class BusController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $bus = new bus();
+        $bus->time_leave = $request->time_leave;
+        $bus->time_arrive = $request->time_arrive;
+        $bus->price = $request->price;
+        $bus->departure = $request->departure;
+        $bus->festival_id = $request->festival_id;
+        $bus->save();
+
+        return redirect()->route('dashboard');
     }
 
     /**

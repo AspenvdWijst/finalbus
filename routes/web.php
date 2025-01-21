@@ -19,7 +19,12 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/festivals/{festival}/buses', [FestivalController::class, 'show'])->name('festival.bus');
 
-Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth', 'admin'])->name('admin');
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+    Route::post('/admin/bus', [BusController::class, 'create'])->name('admin.bus');
+    Route::post('/admin/festival', [FestivalController::class, 'create'])->name('admin.festival');
+});
+
 
 require __DIR__.'/auth.php';
 

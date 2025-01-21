@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\festival;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 
 class FestivalController extends Controller
@@ -20,9 +21,20 @@ class FestivalController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(request $request)
     {
-        //
+        $date = $request->input('date');
+
+        // Convert the incoming date to 'Y-m-d' format (standard MySQL date format)
+        $formattedDate = Carbon::createFromFormat('m/d/Y', $date)->format('Y/m/d');
+        $festival = new festival();
+        $festival->name = $request->name;
+        $festival->genre = $request->genre;
+        $festival->info = $request->info;
+        $festival->date = $formattedDate;
+        $festival->save();
+
+        return redirect()->route('dashboard');
     }
 
     /**
