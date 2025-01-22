@@ -31,7 +31,7 @@
                             <td>${{ $bus->price }}</td>
                             <td>{{$bus->departure}}</td>
                             <th><a href="{{ route('festival.order', ['festival' => $festival->id, 'bus' => $bus->id]) }}">Order</a></th>
-                            @if ($userPoints > 100) <!-- Change this to your threshold -->
+                            @if ($userPoints > 100)
                                 <td>
                                     <form action="{{ route('tickets.store', ['festival' => $festival->id, 'bus' => $bus->id]) }}" method="POST">
                                         @csrf
