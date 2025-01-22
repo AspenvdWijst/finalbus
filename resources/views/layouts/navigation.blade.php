@@ -15,17 +15,10 @@
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 200 200">
-                            <!-- Background Circle -->
                             <circle cx="100" cy="100" r="100" fill="#2D89EF" />
-
-                            <!-- Bus Icon -->
                             <rect x="50" y="50" width="100" height="70" rx="15" fill="#FFF" stroke="#0B5A99" stroke-width="5" />
-
-                            <!-- Windows -->
                             <rect x="60" y="60" width="30" height="20" rx="4" fill="#B3E5FC" />
                             <rect x="110" y="60" width="30" height="20" rx="4" fill="#B3E5FC" />
-
-                            <!-- Wheels -->
                             <circle cx="70" cy="130" r="10" fill="#0B5A99" />
                             <circle cx="130" cy="130" r="10" fill="#0B5A99" />
                         </svg>
