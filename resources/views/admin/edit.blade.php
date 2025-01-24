@@ -76,10 +76,10 @@
                             <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="genre" name="genre" required>
                         </div>
                     </div>
-                    <div class="grid md:grid-cols-2 md:gap-6">
+                    <div>
                         <div class="mb-5">
                             <label for="info" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Info</label>
-                            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="info" name="info" required>
+                            <textarea type="text" rows="5" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="info" name="info" required></textarea>
                         </div>
                         <div class="mb-5">
                             <label for="date" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Date</label>
